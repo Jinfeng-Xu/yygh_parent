@@ -23,6 +23,7 @@ import java.util.Random;
 @RestController
 @ComponentScan(basePackages = "com.qintong")
 @RequestMapping("/admin/hosp/hospitalSet")
+@CrossOrigin
 public class HospitalSetController {
 
     private HospitalSetService hospitalSetService;
