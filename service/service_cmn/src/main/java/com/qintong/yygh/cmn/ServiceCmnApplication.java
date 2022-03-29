@@ -1,5 +1,4 @@
-package com.qintong.yygh.hosp;
-
+package com.qintong.yygh.cmn;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,9 +9,9 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.qintong"})
-public class ServiceHospApplication {
+public class ServiceCmnApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ServiceHospApplication.class, args);
+        SpringApplication.run(ServiceCmnApplication.class, args);
     }
 }
