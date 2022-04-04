@@ -1,17 +1,15 @@
 package com.qintong.yygh.hosp.service.impl;
 
-//import com.qintong.yygh.common.exception.YyghException;
-//import com.qintong.yygh.common.result.ResultCodeEnum;
+import com.qintong.yygh.common.exception.YyghException;
+import com.qintong.yygh.common.result.ResultCodeEnum;
 import com.qintong.yygh.hosp.mapper.HospitalSetMapper;
 import com.qintong.yygh.hosp.service.HospitalSetService;
 import com.qintong.yygh.model.hosp.HospitalSet;
 import com.qintong.yygh.vo.order.SignInfoVo;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.management.Query;
 
 /**
  * @author xujinfengxu
@@ -26,11 +24,10 @@ public class HospitalSetServiceImpl extends ServiceImpl<HospitalSetMapper, Hospi
      */
     @Override
     public String getSignKey(String hoscode) {
-//        QueryWrapper<HospitalSet> wrapper = new QueryWrapper<>();
-//        wrapper.eq("hoscode",hoscode);
-//        HospitalSet hospitalSet = baseMapper.selectOne(wrapper);
-//        return hospitalSet.getSignKey();
-        return null;
+        QueryWrapper<HospitalSet> wrapper = new QueryWrapper<>();
+        wrapper.eq("hoscode",hoscode);
+        HospitalSet hospitalSet = baseMapper.selectOne(wrapper);
+        return hospitalSet.getSignKey();
     }
 
     /**

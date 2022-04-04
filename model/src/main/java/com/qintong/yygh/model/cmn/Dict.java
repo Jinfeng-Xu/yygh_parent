@@ -1,6 +1,5 @@
 package com.qintong.yygh.model.cmn;
 
-import com.qintong.yygh.model.base.BaseEntity;
 import com.baomidou.mybatisplus.annotation.*;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
