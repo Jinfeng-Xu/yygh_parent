@@ -1,5 +1,7 @@
 package com.qintong.yygh.hosp.service;
 
+import com.qintong.yygh.model.hosp.Hospital;
+
 import java.util.Map;
 
 /**
@@ -12,4 +14,11 @@ public interface HospitalService {
      * @param paramMap
      */
     void save(Map<String, Object> paramMap);
+
+    /**
+     * 根据医院编号进行查询
+     * @param hoscode
+     * @return
+     */
+    Hospital getByHoscode(String hoscode);
 }

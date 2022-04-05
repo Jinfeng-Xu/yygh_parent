@@ -39,20 +39,28 @@ public class HospitalServiceImpl implements HospitalService {
 
         // 如果存在进行修改更新
         if (hospitalExist != null){
-            hospital.setStatus(hospitalExist.getStatus());
-            hospital.setCreateTime(hospitalExist.getCreateTime());
-            hospital.setUpdateTime(new Date());
-            hospital.setIsDeleted(0);
-            hospitalRepository.save(hospital);
-        } else{
-            // 如果不存在，进行添加
             hospital.setStatus(0);
             hospital.setCreateTime(new Date());
-            hospital.setUpdateTime(new Date());
-            hospital.setIsDeleted(0);
-            hospitalRepository.save(hospital);
+        } else{
+            // 如果不存在，进行添加
+            hospital.setStatus(hospitalExist.getStatus());
+            hospital.setCreateTime(hospitalExist.getCreateTime());
         }
+        hospital.setUpdateTime(new Date());
+        hospital.setIsDeleted(0);
+        hospitalRepository.save(hospital);
 
 
+    }
+
+    /**
+     * 根据医院编号进行查询
+     * @param hoscode
+     * @return
+     */
+    @Override
+    public Hospital getByHoscode(String hoscode) {
+        Hospital hospital = hospitalRepository.getHospitalByHoscode(hoscode);
+        return hospital;
     }
 }
